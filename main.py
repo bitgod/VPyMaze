@@ -9,7 +9,7 @@ from random import randint, random
 # Program Settings
 WINDOW_TITLE = "VPyMaze"
 WINDOW_WIDTH = 800
-WINDOW_HEIGHT = 600
+WINDOW_HEIGHT = 800
 RANDOM_SIZE = False
 MANUAL_SOLVE = False
 ANIMATE_GENERATION = False
@@ -96,9 +96,9 @@ def main():
         print "Completed in",int(finishTime-startTime),"seconds"
         victory(maze)
     else:
-        countdown = text(text="",align='center', depth=5,
-                         color=color.red, height=maze.floor.height*0.5,
-                         pos=(0, -maze.floor.height/4.0, 10))
+        countdown = VText(text="",align='center', depth=5,
+                         color=color.red, height=maze.floor.height*0.35,
+                         pos=(0, -maze.floor.height/6.0, 10))
         for count in reversed(range(3)):
             countdown.text=str(count+1)
             sleep(1)

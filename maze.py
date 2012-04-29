@@ -3,8 +3,8 @@
 from wall import *
 from cell import *
 from visual import rate, scene
+from visual import text as VText
 from random import choice as randselect
-from visual.text import *
 
 class Maze():
     # Start and Finish must be Cells
@@ -66,12 +66,12 @@ class Maze():
         if self.showCoordinates:
             # Top Row
             for i in range(len(self.cells[0])):
-                text(text=str(i),align='center', depth=1,
+                VText(text=str(i),align='center', depth=1,
                          color=color.white, height=5,width=5,
                          pos=(self.cells[0][i].x,self.cells[0][0].y+7.5))
             # Side Column
             for i in range(len(self.cells)):
-                text(text=str(i),align='center', depth=1,
+                VText(text=str(i),align='center', depth=1,
                          color=color.white, height=5,width=5,
                          pos=(self.cells[0][0].x-10,self.cells[i][0].y-2))
 
@@ -283,7 +283,7 @@ class Maze():
             if current == self.finish:
                 self.solvePath = path
                 print "-------------SOLVED!-------------"
-                text(text='SOLVED!',align='center', depth=5,
+                VText(text='SOLVED!',align='center', depth=5,
                      color=color.white, height=20, width=20, pos=(0,0,7.5))
 
     # Gives user the ability to navigate the maze manually
@@ -339,7 +339,7 @@ class Maze():
             if current == self.finish:
                 self.solvePath = history
                 print "-------------SOLVED!-------------"
-                text(text='SOLVED!',align='center', depth=5,
+                VText(text='SOLVED!',align='center', depth=5,
                      color=color.white, height=20, width=20, pos=(0,0,7.5))
 
             # Highlight current solve path
