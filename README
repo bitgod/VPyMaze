@@ -1,0 +1,27 @@
+########################################
+#
+# VPyMaze by Kile Deal
+#
+########################################
+
+DESCRIPTION
+
+VPyMaze is a 2D maze generation and solving program written
+in Python, and rendered in 3D with the Visual Python module.
+
+REQUIREMENTS
+
+To run the program, you must have installed Python 2.7.2
+and the Visual Python module, which you can download for
+Windows here:
+http://vpython.org/contents/download_windows.html
+
+I haven't tested this with OSX or Linux based systems yet,
+but theoretically it should work fine.
+
+USING PROGRAM SETTINGS IN MAIN.PY
+I've conveniently placed all the basic settings for the program
+in the main.py file near the beginning of the program
+(denoted with a comment). You can edit these to make the program
+run however you wish (it should be fairly self-explanatory what
+each variable controls).
