@@ -9,8 +9,8 @@ from random import randint, random
 # Program Settings
 WINDOW_TITLE = "VPyMaze"
 WINDOW_WIDTH = 800
-WINDOW_HEIGHT = 800
-RANDOM_SIZE = True
+WINDOW_HEIGHT = 600
+RANDOM_SIZE = False
 MANUAL_SOLVE = False
 ANIMATE_GENERATION = False
 ANIMATE_AUTO_SOLVE = True
@@ -96,7 +96,7 @@ def main():
         print "Completed in",int(finishTime-startTime),"seconds"
         victory(maze)
     else:
-        countdown = text(text="",align='center', depth=5, material=materials.blazed,
+        countdown = text(text="",align='center', depth=5,
                          color=color.red, height=maze.floor.height*0.5,
                          pos=(0, -maze.floor.height/4.0, 10))
         for count in reversed(range(3)):

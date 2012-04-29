@@ -2,8 +2,9 @@
 
 from wall import *
 from cell import *
-from visual import rate, text, scene
+from visual import rate, scene
 from random import choice as randselect
+from visual.text import *
 
 class Maze():
     # Start and Finish must be Cells
