@@ -11,13 +11,19 @@ in Python, and rendered in 3D with the Visual Python module.
 
 REQUIREMENTS
 
-To run the program, you must have installed Python 2.7.2
+To run the program, you must have installed Python 2.7.x
 and the Visual Python module, which you can download for
 Windows here:
 http://vpython.org/contents/download_windows.html
 
-I haven't tested this with OSX or Linux based systems yet,
-but theoretically it should work fine.
+If you're on Ubuntu, just make sure your Python version
+is 2.7.x and run the following two commands:
+
+sudo apt-get install python-visual
+sudo apt-get install libgtkglextmm-x11-1.2-dev
+
+There's an issue with the visual.text module when I use
+it in Linux, and I'm still working on fixing it.
 
 USING PROGRAM SETTINGS IN MAIN.PY
 I've conveniently placed all the basic settings for the program
