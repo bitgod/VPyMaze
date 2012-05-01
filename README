@@ -24,7 +24,6 @@ sudo apt-get install libgtkglextmm-x11-1.2-dev
 
 USING PROGRAM SETTINGS IN SETTINGS.PY
 I've conveniently placed all the basic settings for the program
-in the main.py file near the beginning of the program
-(denoted with a comment). You can edit these to make the program
+in the settings.py file. You can edit these to make the program
 run however you wish (it should be fairly self-explanatory what
 each variable controls).
