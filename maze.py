@@ -91,6 +91,7 @@ class Maze():
         self.cells[self.ylen-1][self.xlen-1].iscorner = True
         self.corners.append(self.cells[self.ylen-1][self.xlen-1])
 
+    # Assign pointers to cardinally adjacent cells
     def setCellAssociations(self):
         for y in range(self.ylen):
             for x in range(self.xlen):
@@ -127,6 +128,7 @@ class Maze():
                 current.westCell  = w
                 current.eastCell  = e
 
+    # Assign starting and finishing points for the maze
     def setStartandFinish(self):
         self.start = randselect(self.corners)
         if self.corners.index(self.start) == 0: self.finish = self.corners[3]
@@ -201,6 +203,12 @@ class Maze():
                     backbuffer -= 1
                     nextCell = None
 
+            # Depending on which direction nextCell is with respect to
+                # current, the following blocks should knock down current's
+                # wall in that direction and the nextCell's wall in the
+                # opposite direction. It should also open paths for each
+                # cell in the designated directions
+
             # Going North
             if nextCell == current.northCell:
                 current.northWall.knockdown()
@@ -257,8 +265,6 @@ class Maze():
                 current = self.finish
                 path.append(current)
             else:
-                for i in current.openPaths: print i.visited,
-                print
                 nextCell = self.selectNext(current.openPaths)
                 if nextCell == -1:
                     # Backtrack through the path until a pivot is found

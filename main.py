@@ -5,26 +5,10 @@ from visual import display
 from maze import *
 from time import sleep, time
 from random import randint, random
+from settings import *
 
-# Program Settings
-WINDOW_TITLE = "VPyMaze"
-WINDOW_WIDTH = 800
-WINDOW_HEIGHT = 800
-RANDOM_SIZE = False
-MANUAL_SOLVE = False
-ANIMATE_GENERATION = False
-ANIMATE_AUTO_SOLVE = True
-SHOW_COORDINATES = False
-FIXED_X = 15
-FIXED_Y = 15
-MAX_SIZE = 40
-MIN_SIZE = 5
-
-# Test Settings
-SHOW_PIVOTS = False
-
+# Re-highlight path forwards and backwards until user closes window
 def victory(maze):
-    # Re-highlight path until user closes window
     colors = [color.red, color.blue, color.magenta, color.blue, color.cyan,
               color. orange, color.yellow, color.green, color.black, color.white]
     lastColor = None

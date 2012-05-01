@@ -22,7 +22,7 @@ is 2.7.x and run the following two commands:
 sudo apt-get install python-visual
 sudo apt-get install libgtkglextmm-x11-1.2-dev
 
-USING PROGRAM SETTINGS IN MAIN.PY
+USING PROGRAM SETTINGS IN SETTINGS.PY
 I've conveniently placed all the basic settings for the program
 in the main.py file near the beginning of the program
 (denoted with a comment). You can edit these to make the program
