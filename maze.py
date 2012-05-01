@@ -2,8 +2,7 @@
 
 from wall import *
 from cell import *
-from visual import rate, scene
-from visual import text as VText
+from visual import rate, scene, label
 from random import choice as randselect
 
 class Maze():
@@ -267,11 +266,17 @@ class Maze():
                                 # Then set current to the last cell in path
                                 path[-1].unhighlight()
                                 del path[-1]
-                                current = path[-1]
+                                if len(path) == 0:
+                                    current = self.start
+                                else:
+                                    current = path[-1]
                         else:
                             path[-1].unhighlight()
                             del path[-1]
-                            current = path[-1]
+                            if len(path) == 0:
+                                current = self.start
+                            else:
+                                current = path[-1]
                 else:
                     current = nextCell
                     current.visited = True
@@ -283,8 +288,8 @@ class Maze():
             if current == self.finish:
                 self.solvePath = path
                 print "-------------SOLVED!-------------"
-                VText(text='SOLVED!',align='center', depth=5,
-                     color=color.white, height=20, width=20, pos=(0,0,7.5))
+                label(text='SOLVED!',align='center', depth=5,
+                     color=color.white, height=self.floor.height*0.75, width=20, pos=(0,0,7.5))
 
     # Gives user the ability to navigate the maze manually
     def solveManually(self, scene):
@@ -339,8 +344,8 @@ class Maze():
             if current == self.finish:
                 self.solvePath = history
                 print "-------------SOLVED!-------------"
-                VText(text='SOLVED!',align='center', depth=5,
-                     color=color.white, height=20, width=20, pos=(0,0,7.5))
+                label(text='SOLVED!',align='center', depth=5,
+                     color=color.white, height=self.floor.height*0.75, width=20, pos=(0,0,7.5))
 
             # Highlight current solve path
             for each in history:

@@ -96,9 +96,9 @@ def main():
         print "Completed in",int(finishTime-startTime),"seconds"
         victory(maze)
     else:
-        countdown = VText(text="",align='center', depth=5,
-                         color=color.red, height=maze.floor.height*0.35,
-                         pos=(0, -maze.floor.height/6.0, 10))
+        countdown = label(text="",align='center', depth=5,
+                         color=color.red, height=maze.floor.height,
+                         pos=(0, 0, 10))
         for count in reversed(range(3)):
             countdown.text=str(count+1)
             sleep(1)
