@@ -65,14 +65,14 @@ class Maze():
         if self.showCoordinates:
             # Top Row
             for i in range(len(self.cells[0])):
-                VText(text=str(i),align='center', depth=1,
-                         color=color.white, height=5,width=5,
-                         pos=(self.cells[0][i].x,self.cells[0][0].y+7.5))
+                label(text=str(i),align='center', depth=1,
+                         color=color.white, height=16,width=5,
+                         pos=(self.cells[0][i].x,self.cells[0][0].y+12.5))
             # Side Column
             for i in range(len(self.cells)):
-                VText(text=str(i),align='center', depth=1,
-                         color=color.white, height=5,width=5,
-                         pos=(self.cells[0][0].x-10,self.cells[i][0].y-2))
+                label(text=str(i),align='center', depth=1,
+                         color=color.white, height=16,width=5,
+                         pos=(self.cells[0][0].x-12.5,self.cells[i][0].y-2))
 
     def setcorners(self):
         # Upper left corner
