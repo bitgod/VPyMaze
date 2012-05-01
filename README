@@ -22,9 +22,6 @@ is 2.7.x and run the following two commands:
 sudo apt-get install python-visual
 sudo apt-get install libgtkglextmm-x11-1.2-dev
 
-There's an issue with the visual.text module when I use
-it in Linux, and I'm still working on fixing it.
-
 USING PROGRAM SETTINGS IN MAIN.PY
 I've conveniently placed all the basic settings for the program
 in the main.py file near the beginning of the program
