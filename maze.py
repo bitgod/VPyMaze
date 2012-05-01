@@ -135,6 +135,7 @@ class Maze():
         if self.corners.index(self.start) == 3: self.finish = self.corners[0]
 
         self.start.color = color.green
+        self.start.pivot = True
         self.finish.color = color.blue
         self.start.highlight()
         self.finish.highlight()
@@ -243,19 +244,25 @@ class Maze():
     def solve(self):
         path = []
         current = self.start
+        current.visited = True
         path.append(current)
 
         while current != self.finish:
             if self.animateAutoSolve:
                 rate(15)
+
+            # Check if the finish cell is directly adjacent to current cell
+            # and then move there if so
             if self.finish in current.openPaths:
                 current = self.finish
                 path.append(current)
             else:
+                for i in current.openPaths: print i.visited,
+                print
                 nextCell = self.selectNext(current.openPaths)
                 if nextCell == -1:
                     # Backtrack through the path until a pivot is found
-                    for cell in path:
+                    for cell in range(len(path)):
                         if self.animateAutoSolve:
                             rate(15)
                         if current.pivot:
@@ -266,17 +273,11 @@ class Maze():
                                 # Then set current to the last cell in path
                                 path[-1].unhighlight()
                                 del path[-1]
-                                if len(path) == 0:
-                                    current = self.start
-                                else:
-                                    current = path[-1]
+                                current = path[-1]
                         else:
                             path[-1].unhighlight()
                             del path[-1]
-                            if len(path) == 0:
-                                current = self.start
-                            else:
-                                current = path[-1]
+                            current = path[-1]
                 else:
                     current = nextCell
                     current.visited = True
@@ -289,7 +290,7 @@ class Maze():
                 self.solvePath = path
                 print "-------------SOLVED!-------------"
                 label(text='SOLVED!',align='center', depth=5,
-                     color=color.white, height=self.floor.height*0.75, width=20, pos=(0,0,7.5))
+                     color=color.white, height=self.floor.height*0.60, width=20, pos=(0,0,7.5))
 
     # Gives user the ability to navigate the maze manually
     def solveManually(self, scene):
@@ -345,7 +346,7 @@ class Maze():
                 self.solvePath = history
                 print "-------------SOLVED!-------------"
                 label(text='SOLVED!',align='center', depth=5,
-                     color=color.white, height=self.floor.height*0.75, width=20, pos=(0,0,7.5))
+                     color=color.white, height=self.floor.height*0.60, width=20, pos=(0,0,7.5))
 
             # Highlight current solve path
             for each in history:
