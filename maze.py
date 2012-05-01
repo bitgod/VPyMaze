@@ -296,7 +296,8 @@ class Maze():
                 self.solvePath = path
                 print "-------------SOLVED!-------------"
                 label(text='SOLVED!',align='center', depth=5,
-                     color=color.white, height=self.floor.height*0.60, width=20, pos=(0,0,7.5))
+                     color=color.white, height=self.floor.height*0.60, width=20,
+                     pos=(0,0,7.5), opacity=0.25)
 
     # Gives user the ability to navigate the maze manually
     def solveManually(self, scene):
@@ -352,7 +353,8 @@ class Maze():
                 self.solvePath = history
                 print "-------------SOLVED!-------------"
                 label(text='SOLVED!',align='center', depth=5,
-                     color=color.white, height=self.floor.height*0.60, width=20, pos=(0,0,7.5))
+                     color=color.white, height=self.floor.height*0.60, width=20,
+                     pos=(0,0,7.5), opacity=0.25)
 
             # Highlight current solve path
             for each in history:
