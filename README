@@ -8,6 +8,9 @@ DESCRIPTION
 
 VPyMaze is a 2D maze generation and solving program written
 in Python, and rendered in 3D with the Visual Python module.
+Depending on the settings of the program, the maze's 
+generation will animate, and then either solve itself
+or allow the user to solve manually with the arrow keys.
 
 REQUIREMENTS
 
