@@ -40,7 +40,8 @@ def main():
         maze = Maze(xlen=FIXED_X, ylen=FIXED_Y)
 
     print "SIZE: {X}x{Y}".format(X = maze.xlen, Y = maze.ylen)
-    print "DIFFICULTY: ",int((maze.xlen * maze.ylen)/100.0)
+    print "DIFFICULTY: ",int((maze.xlen * maze.ylen)/100.0) # Difficulty is basically arbitrary. It's in here
+                                                            # mostly for fun.
 
     if ANIMATE_GENERATION:
         maze.animateGen = True
